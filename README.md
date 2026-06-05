@@ -65,12 +65,12 @@ The distribution of track popularity shows that popularity scores are not evenly
 
 
 
-The most common genre plot shows which genres appear most often in the dataset. Since the dataset contains many genres, focusing on the top 15 makes the distribution easier to interpret. Genre is relevant because different genres may have different popularity patterns and audio characteristics.
+The most common genre plot shows which genres appear most often in the dataset, which turned out to be that they all appear equally.. Since the dataset contains many genres, I am going to focus on 15 to make the distribution easier to interpret. Genre is relevant because different genres may have different popularity patterns and audio characteristics.
 
 ** ADD PLOTLY HERE**
 
 ## Bivariate Analysis
-This box plot compares popularity distributions across the most common genres. It helps show whether certain genres tend to have higher or lower popularity scores, which is relevant because genre may influence both listener exposure and model predictions.
+This box plot compares popularity distributions across the 15 chosen genres. It helps show whether certain genres tend to have higher or lower popularity scores, which is relevant because genre may influence both listener exposure and model predictions.
 
 ** ADD PLOTLY **
 
