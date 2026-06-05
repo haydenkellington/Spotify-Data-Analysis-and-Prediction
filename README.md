@@ -81,8 +81,7 @@ This scatter plot compares artist-level popularity with track-level popularity. 
 ** ADD PLOTLY **
 
 ## Grouping and Aggregates
-
-** ADD GROUPING AND AGGREGATES DESCRIPTION HERE**
+The aggregate table compares solo and collaborative tracks across popularity, duration, number of artists, and artist-level features. This is useful because my main research question asks whether collaborative tracks are more popular than solo tracks. The table provides an initial summary of whether collaborations have higher average or median popularity, and whether they differ in related features such as artist popularity or follower count.
 ** ADD PIVOT TABLE OR WHATEVER HERE **
 
 ## Assesment of Missigness 
