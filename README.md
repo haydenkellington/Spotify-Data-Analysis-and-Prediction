@@ -11,6 +11,7 @@ The main research question for this project is: **Are collaborative tracks more 
 Beyond this main question, the project also considers data quality and prediction. I examine patterns of missingness in the dataset and investigate whether missing values appear related to other observed information. I also frame track popularity as a prediction problem, using available song and artist information to estimate popularity scores. Overall, the goal is to better understand the relationship between collaboration, musical characteristics, artist context, and popularity in Spotify’s music data.
 
 ## Columns
+
 | Column | Dataset | Description |
 |---|---|---|
 | `track_id` | Tracks | Unique identifier for each track. |
