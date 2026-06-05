@@ -48,6 +48,7 @@ I cleaned the data by keeping the main dataframe at the track level, so each son
 I also created several useful columns for later analysis. I counted the number of credited artists on each track, created a collab indicator for whether a song has multiple artists, converted track duration from milliseconds to minutes, and extracted the release year from the release date. This cleaned structure prevents collaborative songs from being over-counted while still allowing the analysis to use both track-level and artist-level information.
 
 Here is the first few rows of my final Dataframe
+
 | track_id | track_name | artists | track_genre | popularity_x | duration_min | release_year | num_artists | collab | avg_artist_followers | avg_artist_popularity | matched_artists |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 5SuOikwiRyPMVoIQDJUgSV | Comedy | Gen Hoshino | acoustic | 73 | 3.84 | 1974 | 1 | False | 852637.00 | 66.00 | 1 |
