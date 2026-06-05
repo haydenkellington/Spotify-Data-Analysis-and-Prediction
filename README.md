@@ -133,7 +133,7 @@ For missingness dependency, I tested whether missing values in tempo depend on o
 **Result:** The observed difference was about -1.52, meaning tracks with missing tempo were released about 1.5 years earlier on average. The p-value was approximately 0.001, so I reject the null hypothesis. This suggests that tempo missingness depends on release year. In the graph below, I grouped by decade to make it easier to view.
 
 <iframe
-  src="assets/missignessbydecade.html"
+  src="assets/missingnessbydecade.html"
   width="800"
   height="600"
   frameborder="0"
@@ -150,7 +150,7 @@ Test statistic: Total Variation Distance (TVD) between the genre distribution of
 Result: The observed TVD was about 0.179, and the p-value was about 0.001. Since this p-value is less than 0.05, I reject the null hypothesis. This suggests that tempo missingness depends on track genre, meaning certain genres are more likely to have missing tempo values than others.
 
 <iframe
-  src="assets/missignessbygenre.html"
+  src="assets/missingnessbygenre.html"
   width="800"
   height="600"
   frameborder="0"
