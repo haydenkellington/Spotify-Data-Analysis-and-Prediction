@@ -78,7 +78,7 @@ The genre count plot shows that the dataset is roughly balanced across genres, w
 ></iframe>
 
 ## Bivariate Analysis
-This box plot compares popularity distributions across the 15 chosen genres. It helps show whether certain genres tend to have higher or lower popularity scores, which is relevant because genre may influence both listener exposure and model predictions.
+This box plot compares popularity distributions across 15 chosen genres. It helps show whether certain genres tend to have higher or lower popularity scores, which is relevant because genre may influence both listener exposure and model predictions.
 
 <iframe
   src="assets/trackpopularitybygenre.html"
@@ -198,11 +198,11 @@ The best final model used max_depth = 10, min_samples_leaf = 5, and n_estimators
 ## Fairness Analysis
 For the fairness analysis, I compared the final model’s performance on collaborative tracks and solo tracks. This group comparison connects directly to my main research question, since the project studies whether collaboration is related to track popularity. Because the model predicts a numeric popularity score, I used RMSE as the evaluation metric.
 
-Null hypothesis: The final model performs equally well for collaborative tracks and solo tracks. Any difference in RMSE is due to random chance.
+**Null hypothesis:** The final model performs equally well for collaborative tracks and solo tracks. Any difference in RMSE is due to random chance.
 
-Alternative hypothesis: The final model performs worse for collaborative tracks than for solo tracks.
+**Alternative hypothesis:** The final model performs worse for collaborative tracks than for solo tracks.
 
-Test statistic:
+**Test statistic:**
 RMSE for collaborative tracks - RMSE for solo tracks
 
 The final model had an RMSE of about 20.91 for collaborative tracks and an RMSE of about 18.96 for solo tracks. The observed RMSE difference was about 1.95, meaning the model made larger errors for collaborative tracks. The permutation test produced a p-value of about 0.001, which is less than the 5% significance level, so I reject the null hypothesis. This suggests that the final model performs significantly worse for collaborative tracks than for solo tracks.
