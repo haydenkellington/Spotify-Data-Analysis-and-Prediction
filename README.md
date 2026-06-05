@@ -111,7 +111,7 @@ The aggregate table compares solo and collaborative tracks across popularity, du
 <iframe
   src="assets/collab_summary.html"
   width="800"
-  height="600"
+  height="200"
   frameborder="0"
 ></iframe>
 
