@@ -176,7 +176,8 @@ The histogram below shows the simulated test statistics from the permutation tes
   height="600"
   frameborder="0"
 ></iframe>
-###Results:
+
+### Results:
 The observed test statistic was about 0.642, meaning collaborative tracks had an average popularity score about 0.64 points higher than solo tracks in the observed data. The permutation test produced a p-value of about 0.0002. Since this p-value is less than the 5% significance level, I reject the null hypothesis. This provides evidence that collaborative tracks are more popular on average than solo tracks, although the size of the observed difference is fairly small.
 
 ## Framing a Prediction Problem
