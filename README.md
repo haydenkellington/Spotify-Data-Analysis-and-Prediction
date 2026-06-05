@@ -1,6 +1,5 @@
 # Spotify Data Analysis
 
-DSC80 Project at UCSD
 By Hayden Kellington
 
 ## Introduction
@@ -69,7 +68,7 @@ The distribution of track popularity shows that popularity scores are not evenly
 ></iframe>
 
 
-The most common genre plot shows which genres appear most often in the dataset, which turned out to be that they all appear equally.. Since the dataset contains many genres, I am going to focus on 15 to make the distribution easier to interpret. Genre is relevant because different genres may have different popularity patterns and audio characteristics.
+The genre count plot shows that the dataset is roughly balanced across genres, with many genres having the same number of tracks. Because of this, the plot is less useful for identifying dominant genres, but it is still helpful for understanding the structure of the dataset. Since genre counts are so evenly distributed, later genre-based analysis focuses more on differences in popularity and missingness rather than frequency.
 
 <iframe
   src="assets/mostcommongenres.html"
@@ -115,14 +114,15 @@ The aggregate table compares solo and collaborative tracks across popularity, du
   height="600"
   frameborder="0"
 ></iframe>
-## Assesment of Missigness 
+
+## Assessment of Missingness 
 ### NMAR Analysis
 For my NMAR analysis, I focused on tempo because it was the only column with substantial missingness in the track dataset. I do not believe tempo is clearly NMAR, because there is not enough evidence that the chance of a tempo value being missing depends specifically on the unobserved tempo value itself. It seems more likely that tempo missingness is related to other observed information, such as release year, genre, or how Spotify’s audio analysis process handled certain types of tracks. If I had more information about how the Spotify Web API generated audio features, such as whether older songs or certain genres were harder to analyze, I could better determine the missingness mechanism. Based on the available data, I treat tempo missingness as something to investigate through dependency tests rather than assuming it is NMAR.
 
-### Missigness Dependency
+### Missingness Dependency
 For missingness dependency, I tested whether missing values in tempo depend on other columns. I used tempo_missing as the missingness indicator and ran permutation tests by shuffling the missingness labels.
 
-**Test 1: Tempo Missingness vs. Release Year**
+**Test 1: Tempo Missingess vs. Release Year**
 
 **Null hypothesis:** The missingness of tempo does not depend on release_year; any difference in release year between rows with missing and non-missing tempo is due to random chance.
 
@@ -176,6 +176,8 @@ The histogram below shows the simulated test statistics from the permutation tes
   height="600"
   frameborder="0"
 ></iframe>
+###Results:
+The observed test statistic was about 0.642, meaning collaborative tracks had an average popularity score about 0.64 points higher than solo tracks in the observed data. The permutation test produced a p-value of about 0.0002. Since this p-value is less than the 5% significance level, I reject the null hypothesis. This provides evidence that collaborative tracks are more popular on average than solo tracks, although the size of the observed difference is fairly small.
 
 ## Framing a Prediction Problem
 My prediction problem is to predict a track’s Spotify popularity score using information about the song and its artists. Since popularity is a numeric score, this is a regression problem rather than a classification problem. I chose popularity as the response variable because it connects directly to my research question about what factors help explain why some tracks are more popular than others.
