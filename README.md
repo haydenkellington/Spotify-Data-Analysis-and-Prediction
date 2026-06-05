@@ -59,7 +59,7 @@ Here is the first few rows of my final Dataframe
 
 The distribution of track popularity shows that popularity scores are not evenly spread across the 0-100 scale. Many tracks have relatively low or moderate popularity, while highly popular tracks are less common. This suggests that popularity is skewed, which is important for both the exploratory analysis and the later prediction task.
 
-**ADD PLOTLY HERE**
+** ADD PLOTLY HERE **
 
 
 
@@ -102,7 +102,7 @@ For missingness dependency, I tested whether missing values in tempo depend on o
 
 **Result:** The observed difference was about -1.52, meaning tracks with missing tempo were released about 1.5 years earlier on average. The p-value was approximately 0.001, so I reject the null hypothesis. This suggests that tempo missingness depends on release year.
 
-**INSERT GRAPHS HERE**
+** INSERT GRAPHS HERE **
 
 **Test 2:** Tempo Missingness vs. Track Popularity
 
