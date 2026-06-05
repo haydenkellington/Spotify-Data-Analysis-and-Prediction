@@ -61,30 +61,60 @@ Here is the first few rows of my final Dataframe
 
 The distribution of track popularity shows that popularity scores are not evenly spread across the 0-100 scale. Many tracks have relatively low or moderate popularity, while highly popular tracks are less common. This suggests that popularity is skewed, which is important for both the exploratory analysis and the later prediction task.
 
-** ADD PLOTLY HERE **
-
+<iframe
+  src="assets/trackpopularitydist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 The most common genre plot shows which genres appear most often in the dataset, which turned out to be that they all appear equally.. Since the dataset contains many genres, I am going to focus on 15 to make the distribution easier to interpret. Genre is relevant because different genres may have different popularity patterns and audio characteristics.
 
-** ADD PLOTLY HERE**
+<iframe
+  src="assets/mostcommongenres.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Bivariate Analysis
 This box plot compares popularity distributions across the 15 chosen genres. It helps show whether certain genres tend to have higher or lower popularity scores, which is relevant because genre may influence both listener exposure and model predictions.
 
-** ADD PLOTLY **
+<iframe
+  src="assets/trackpopularitybygenre.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 This scatter plot examines whether more danceable tracks tend to be more popular. The relationship appears useful to explore because danceability is one of the main audio features available for predicting popularity.
 
-** ADD PLOTLY **
+<iframe
+  src="assets/danceablevspopular.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 This scatter plot compares artist-level popularity with track-level popularity. It is especially relevant because tracks by already-popular artists may be more likely to receive higher popularity scores, regardless of the song’s audio features.
 
-** ADD PLOTLY **
+<iframe
+  src="assets/artistpopsongpop.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Grouping and Aggregates
 The aggregate table compares solo and collaborative tracks across popularity, duration, number of artists, and artist-level features. This is useful because my main research question asks whether collaborative tracks are more popular than solo tracks. The table provides an initial summary of whether collaborations have higher average or median popularity, and whether they differ in related features such as artist popularity or follower count.
-** ADD PIVOT TABLE OR WHATEVER HERE **
+
+<iframe
+  src="assets/collab_summary.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Assesment of Missigness 
 ### NMAR Analysis
@@ -101,19 +131,31 @@ For missingness dependency, I tested whether missing values in tempo depend on o
 
 **Test statistic:** Difference in mean release year between tracks where tempo is missing and tracks where tempo is not missing.
 
-**Result:** The observed difference was about -1.52, meaning tracks with missing tempo were released about 1.5 years earlier on average. The p-value was approximately 0.001, so I reject the null hypothesis. This suggests that tempo missingness depends on release year.
+**Result:** The observed difference was about -1.52, meaning tracks with missing tempo were released about 1.5 years earlier on average. The p-value was approximately 0.001, so I reject the null hypothesis. This suggests that tempo missingness depends on release year. In the graph below, I grouped by decade to make it easier to view.
 
-** INSERT GRAPHS HERE **
+<iframe
+  src="assets/missignessbydecade.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-**Test 2:** Tempo Missingness vs. Track Popularity
+**Test 2:** Tempo Missingness vs. Track Genre
 
-**Null hypothesis:** The missingness of tempo does not depend on track popularity; any difference in popularity between rows with missing and non-missing tempo is due to random chance.
+Null hypothesis: The missingness of tempo does not depend on track_genre; any difference in the genre distributions between rows with missing and non-missing tempo is due to random chance.
 
-**Alternative hypothesis:** The missingness of tempo does depend on track popularity.
+Alternative hypothesis: The missingness of tempo does depend on track_genre.
 
-**Test statistic:** Difference in mean track popularity between tracks where tempo is missing and tracks where tempo is not missing.
+Test statistic: Total Variation Distance (TVD) between the genre distribution of tracks where tempo is missing and the genre distribution of tracks where tempo is not missing.
 
-**Result:** The p-value was large, around 0.718 when tested on the track-level dataframe, so I fail to reject the null hypothesis. This means there is not strong evidence that tempo missingness depends on track popularity.
+Result: The observed TVD was about 0.179, and the p-value was about 0.001. Since this p-value is less than 0.05, I reject the null hypothesis. This suggests that tempo missingness depends on track genre, meaning certain genres are more likely to have missing tempo values than others.
+
+<iframe
+  src="assets/missignessbygenre.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Hypothesis Testing
 For my hypothesis test, I investigated whether collaborative tracks tend to be more popular than solo tracks. This connects directly to my main research question because collaborations may benefit from multiple artists’ audiences and wider exposure. I used a permutation test to compare the average popularity of collaborative tracks and solo tracks while simulating a world where collaboration status has no relationship with popularity. 
@@ -129,7 +171,12 @@ mean popularity of collaborative tracks - mean popularity of solo tracks
 
 The histogram below shows the simulated test statistics from the permutation test, with the observed statistic marked for comparison.
 
-** INSERT GRAPH HERE**
+<iframe
+  src="assets/hypothtesting.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Framing a Prediction Problem
 My prediction problem is to predict a track’s Spotify popularity score using information about the song and its artists. Since popularity is a numeric score, this is a regression problem rather than a classification problem. I chose popularity as the response variable because it connects directly to my research question about what factors help explain why some tracks are more popular than others.
