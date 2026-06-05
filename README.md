@@ -115,7 +115,6 @@ The aggregate table compares solo and collaborative tracks across popularity, du
   height="600"
   frameborder="0"
 ></iframe>
-
 ## Assesment of Missigness 
 ### NMAR Analysis
 For my NMAR analysis, I focused on tempo because it was the only column with substantial missingness in the track dataset. I do not believe tempo is clearly NMAR, because there is not enough evidence that the chance of a tempo value being missing depends specifically on the unobserved tempo value itself. It seems more likely that tempo missingness is related to other observed information, such as release year, genre, or how Spotify’s audio analysis process handled certain types of tracks. If I had more information about how the Spotify Web API generated audio features, such as whether older songs or certain genres were harder to analyze, I could better determine the missingness mechanism. Based on the available data, I treat tempo missingness as something to investigate through dependency tests rather than assuming it is NMAR.
